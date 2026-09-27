@@ -1,3 +1,8 @@
 package assignment20;
 
-public enum Status { OPEN, INVESTIGATING, RESOLVED }
+// Tracks the lifecycle status of an incident
+public enum Status {
+    OPEN,
+    INVESTIGATING,
+    RESOLVED
+}

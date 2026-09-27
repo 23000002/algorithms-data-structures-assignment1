@@ -2,6 +2,7 @@ package assignment20;
 
 import java.time.LocalDate;
 
+// Model class representing a single security incident record
 public class Incident {
     private final String incidentId;
     private final String type;
@@ -11,15 +12,17 @@ public class Incident {
     private final Severity severity;
     private Status status;
 
+    // Constructor used when adding a new incident (defaults to today's date)
     public Incident(String incidentId, String type, String description, String reporter,
-            Severity severity, Status status) {
+                    Severity severity, Status status) {
         this(incidentId, type, description, reporter, LocalDate.now(), severity, status);
     }
 
+    // Full constructor with explicit date
     public Incident(String incidentId, String type, String description, String reporter,
-            LocalDate dateReported, Severity severity, Status status) {
-        if (blank(incidentId) || blank(type) || blank(description) || blank(reporter)) {
-            throw new IllegalArgumentException("Incident details cannot be blank.");
+                    LocalDate dateReported, Severity severity, Status status) {
+        if (isBlank(incidentId) || isBlank(type) || isBlank(description) || isBlank(reporter)) {
+            throw new IllegalArgumentException("Incident fields cannot be empty.");
         }
         if (dateReported == null || severity == null || status == null) {
             throw new IllegalArgumentException("Date, severity, and status are required.");
@@ -33,7 +36,7 @@ public class Incident {
         this.status = status;
     }
 
-    private static boolean blank(String value) {
+    private static boolean isBlank(String value) {
         return value == null || value.trim().isEmpty();
     }
 
@@ -66,14 +69,15 @@ public class Incident {
     }
 
     public void setStatus(Status status) {
-        if (status == null)
+        if (status == null) {
             throw new IllegalArgumentException("Status cannot be null.");
+        }
         this.status = status;
     }
 
     @Override
     public String toString() {
-        return String.format("%-9s %-14s %-9s %-15s %-12s %s", incidentId, type, severity, status, dateReported,
-                description);
+        return String.format("%-9s %-16s %-10s %-15s %-12s %s",
+                incidentId, type, severity, status, dateReported, description);
     }
 }
