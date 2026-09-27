@@ -24,7 +24,7 @@ Our application is a Java program that manages security incident records. It use
 
 ## 2. Technical Justifications
 
-### 2.1 Why Singly Linked List is Appropriate (§2.2)
+### 2.1 Why Singly Linked List is Appropriate (2.2)
 We implemented a custom Singly Linked List (`IncidentLinkedList.java`) for the following reasons:
 1. **Dynamic Size:** Security incidents arrive unpredictably during the day. A linked list grows and shrinks as needed without requiring fixed array sizes or resizing copies.
 2. **Efficient Deletions and Insertions:** Deleting or inserting nodes only requires updating reference pointers (`next`), which avoids shifting elements in memory like an array does.
@@ -33,7 +33,7 @@ We implemented a custom Singly Linked List (`IncidentLinkedList.java`) for the f
 
 ---
 
-### 2.2 Why Linear Search is Appropriate (§2.3)
+### 2.2 Why Linear Search is Appropriate (2.3)
 We implemented Linear Search (`linearSearchById`) to search for incidents by ID:
 1. **Data is Unsorted by ID:** Incidents are added chronologically as they happen, meaning the list is unsorted by ID. Linear search works directly on unsorted data.
 2. **No Direct Random Access:** Unlike arrays, linked lists do not support index lookups like `list[i]`. Because we cannot jump directly to the middle element in O(1) time, Binary Search would require traversing nodes anyway ($O(n \log n)$ total). Therefore, Linear Search is the most appropriate search algorithm for a singly linked list.
@@ -45,7 +45,7 @@ We implemented Linear Search (`linearSearchById`) to search for incidents by ID:
 
 ---
 
-### 2.3 Why Merge Sort is Appropriate (§2.4)
+### 2.3 Why Merge Sort is Appropriate (2.4)
 We implemented Merge Sort (`sortedBySeverity`) to rank incidents by severity (CRITICAL $\rightarrow$ HIGH $\rightarrow$ MEDIUM $\rightarrow$ LOW):
 1. **Guaranteed $O(n \log n)$ Performance:** Merge Sort guarantees $O(n \log n)$ time complexity across all cases (best, average, and worst). It never degrades to $O(n^2)$ like QuickSort can on poor pivot choices, or like Bubble/Insertion sort.
 2. **No Extra Memory for Linked Lists:** When Merge Sort is done on arrays, it requires $O(n)$ extra memory for temporary helper arrays. On a linked list, we only change the node `next` pointers in place, which uses $O(1)$ extra heap data space.
@@ -56,7 +56,7 @@ We implemented Merge Sort (`sortedBySeverity`) to rank incidents by severity (CR
 
 ---
 
-## 3. How the Implementation Meets Functional Requirements (§3)
+## 3. How the Implementation Meets Functional Requirements (3)
 
 | Requirement | Implementation in Code | Description |
 | :--- | :--- | :--- |
