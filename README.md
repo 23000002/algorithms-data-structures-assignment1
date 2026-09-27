@@ -1,18 +1,7 @@
 # COM 2224 Algorithms & Data Structures — Assignment 1
 
-**Module:** COM 2224 Algorithms & Data Structures  
-**Institution:** University of Venda  
-**Date:** 25 September 2026  
-**Project Topic:** Cybersecurity Incident Management System  
 
-### Group Members:
-1. [Student Name 1] - [Student Number 1]
-2. [Student Name 2] - [Student Number 2]
-3. [Student Name 3] - [Student Number 3]
-4. [Student Name 4] - [Student Number 4]
-5. [Student Name 5] - [Student Number 5]
 
----
 
 ## 1. Project Overview & Problem Description
 
